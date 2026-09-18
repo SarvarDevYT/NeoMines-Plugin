@@ -1,0 +1,329 @@
+﻿Time:
+  Seconds: "чзТ"
+  Second: "чзТ"
+  Minutes: "хИЖщТЯ"
+  Minute: "хИЖщТЯ"
+  Hours: "х░ПцЧ╢"
+  Hour: "х░ПцЧ╢"
+
+GUI:
+  Universal:
+    Previous-Page:
+      Name: "&6&lф╕Кф╕Аф╕кщб╡"
+      Lore:
+        - ""
+        - "&7цЙУх╝Аф╕Кф╕Ащб╡"
+    Next-Page:
+      Name: "&6&lф╕Лф╕Ащб╡"
+      Lore:
+        - ""
+        - "&7цЙУх╝Аф╕Лф╕Ащб╡"
+    Close:
+      Name: "&4&lхЕ│щЧн"
+      Lore:
+        - ""
+        - "&7хЕ│щЧншПЬхНХ"
+    Back-To-Mine-Menu:
+      Name: "&6&lш┐ФхЫЮ"
+      Lore:
+        - ""
+        - "&7ш┐ФхЫЮшПЬхНХ"
+    Back-To-Composition-Menu:
+      Name: "&6&lш┐ФхЫЮ"
+      Lore:
+        - ""
+        - "&7ш┐ФхЫЮшПЬхНХ"
+    Back-To-Block-Menu:
+      Name: "&6&lш┐ФхЫЮ"
+      Lore:
+        - ""
+        - "&7ш┐ФхЫЮцЦ╣хЭЧшПЬхНХ"
+    Increase-By: "&aхвЮхКа %number%"
+    Decrease-By: "&cхЗПх░С %number%"
+  Mine-List-Menu:
+    Title: "&bчЯ┐хЬ║"
+  Mine-Menu:
+    Title: "&b%mine%"
+    Items:
+      Configure-Composition:
+        Name: "&6щЕНч╜оч╗ДхРИ"
+        Lore:
+          - "&bщЕНч╜оч╗ДхРИ: &c%chance%%"
+      Configure-Delay:
+        Name: "&6щЕНч╜ощЗНч╜ох╗╢ш┐Я"
+        Lore:
+          - "&bщЗНч╜ох╗╢ш┐Я: &c%delay%s"
+          - "&bщЗНч╜очЩ╛хИЖцпФ: &c%percentage%%"
+          - ""
+          - "&fхП│щФохНХхЗ╗ф╗ехИЗцНвцибх╝П"
+      Configure-Percentage:
+        Name: "&6щЕНч╜ощЗНч╜очЩ╛хИЖцпФ"
+        Lore:
+          - "&bщЗНч╜очЩ╛хИЖцпФ: &c%percentage%%"
+          - "&bщЗНч╜ох╗╢ш┐Я: &c%delay%s"
+          - ""
+          - "&fхП│щФохНХхЗ╗ф╗ехИЗцНвцибх╝П"
+      Warn:
+        Active:
+          Name: "&aщЗНч╜оцЧ╢шнжхСК"
+        Inactive:
+          Name: "&7ф╕Нф╝ЪхЬищЗНч╜оцЧ╢хПСхЗ║шнжхСК"
+        Lore:
+          - "&bхжВцЮЬхРпчФишнжхСКщЗНч╜оя╝МхИЩщАЙф╕н"
+      Warn-Global:
+        Active:
+          Name: "&aхЕих▒АшнжхСК"
+        Inactive:
+          Name: "&7ф╕Нф╝ЪхЕих▒АхПСхЗ║шнжхСК"
+        Lore:
+          - "&bхжВцЮЬхРпчФихЕих▒АшнжхСКя╝МхИЩщАЙф╕н"
+      Warn-Hotbar:
+        Active:
+          Name: "&aхЬишбАцЭбф╕нцШ╛чд║чзТцХ░"
+        Inactive:
+          Name: "&7ф╕Нф╝ЪшбАцЭбф╕нцШ╛чд║чзТцХ░"
+        Lore:
+          - "&bхжВцЮЬхРпчФишбАцЭбф╕нцШ╛чд║чзТцХ░я╝МхИЩщАЙф╕н"
+      Teleport-Players:
+        Active:
+          Name: "&aх░ЖчОйхо╢ф╝ащАБхИ░щЗНч╜очК╢цАБ"
+        Inactive:
+          Name: "&7ф╕Нф╝ЪхЬищЗНч╜оцЧ╢ф╝ащАБчОйхо╢"
+        Lore:
+          - "&bхжВцЮЬхРпчФищЗНч╜оцЧ╢ф╝ащАБчОйхо╢я╝МхИЩщАЙф╕н"
+      Teleport-Players-To-Reset-Location:
+        Active:
+          Name: "&aх░ЖчОйхо╢ф╝ащАБхИ░щЗНч╜оф╜Нч╜о"
+        Inactive:
+          Name: "&7х░ЖчОйхо╢ф╝ащАБхИ░чЯ┐хМ║ф╕К"
+        Lore:
+          - "&bщАЙцЛйчЯ┐хМ║чОйхо╢цШпхРжх║Фшпеф╝ащАБ"
+          - "&bщЗНч╜оф╜Нч╜ошАМф╕НцШпф╗Еф╗ЕхЬищб╢щГи"
+          - "&6&7чбоф┐ЭцВицЬЙф╕Аф╕кщЗНч╜оф╜Нч╜о"
+          - "&7ф╜┐чФи /nm setresettp"
+          - "&7ц┐Ац┤╗я╝Мф╝ащАБчОйхо╢цЙНшГ╜чФЯцХИ"
+      Replace-Mode:
+        Active:
+          Name: "&aцЫ┤цНвцибх╝Пх╝АхРп"
+        Inactive:
+          Name: "&7цЫ┐цНвцибх╝ПхЕ│щЧн"
+        Lore:
+          - "&bхжВцЮЬчЯ┐хМ║хПкцЫ┐цНв &aчй║ц░Ф &bф╕║чЯ┐чЙйя╝МхИЩщАЙф╕н"
+      Efficiency-Lvl:
+        Name: "&6щЕНч╜оцЬАх░ПцХИчОЗ l"
+        Lore:
+          - "&bцЙУча┤хМ║хЭЧчЪДцЬАф╜ОцХИчОЗц░┤х╣│: &c%level%"
+          - ""
+          - "&6&lц│ицДП: &bчобчРЖхСШшО╖х╛ЧцЭГщЩРчЪДшо╕хПп"
+          - "&bneomines.break хПпф╗еч╗Хх╝Аш┐Щф╕к"
+      Warn-Distance:
+        Name: "&6щЕНч╜ошнжхСКш╖Эчж╗"
+        Lore:
+          - "&bшнжхСКш╖Эчж╗: &c%distance%"
+      Reset-Mine:
+        Name: "&cщЗНч╜очЯ┐хЬ║"
+      Teleport:
+        Name: "&5ф╝ащАБхИ░чЯ┐хЬ║"
+        Lore:
+          - "&bцККф╜аф╝ащАБхИ░чЯ┐хЬ║"
+      Delete:
+        Name: "&4&lхИащЩдчЯ┐хЬ║"
+      Start-Stop:
+        Active:
+          Name: "&aчЯ┐хЬ║х╝АхРп"
+        Inactive:
+          Name: "&7чЯ┐хЬ║хЕ│щЧн"
+        Lore:
+          - "&bхжВцЮЬх║ФшпешЗкхКищЗНч╜оя╝МхИЩщАЙф╕нх╝АхРп"
+      Back:
+        Name: "&4&lш┐ФхЫЮ"
+        Lore:
+          - ""
+          - "&7ш┐ФхЫЮчЯ┐хЬ║шПЬхНХуАВ"
+      Running:
+        Active:
+          Name: "&aчЯ┐хЬ║чЫохЙНцнгхЬиш┐РшбМ"
+          Lore:
+            - "&7хжВцЮЬчЯ┐хЬ║х╜УхЙНцнгхЬиш┐РшбМя╝МхИЩцШ╛чд║"
+            - "&7хжВцЮЬхоГф╕НцШпя╝МщВгф╣ИхоГх░ЖцШ╛чд║хЕ│щЧнуАВ"
+        Inactive:
+          Name: "&7цИСчЪДц▓бцЬЙш┐РшбМцШпхЫаф╕║:"
+          Reasons:
+            Invalid-Region: "&cхоГчЪДхМ║хЯЯцЧацХИ"
+            Stopped: "&cхоГшвлхБЬцнвф║Ж"
+            No-Composition: "&cхоГц▓бцЬЙцИРхИЖ"
+            Invalid-Delay: "&cхоГчЪДщЗНч╜ох╗╢ш┐ЯцШп: %delay%"
+  Composition-Menu:
+    Title: "&bхЬ░хЫ╛: &c%chance%%"
+    Items:
+      Composition-Block:
+        Name: "%!unchangeable! internal material name%"
+        Lore:
+          - "&f%blockdata%"
+          - ""
+          - "&bчФЯцИРцжВчОЗ: &c%chance%%"
+          - ""
+          - "&aх╖жщФоцЭещЕНч╜охУж"
+      Info:
+        Name: "&6ф┐бцБп:"
+        Lore:
+          - "&aц╖╗хКачЙйхУБ хП│щФо/х╖жщФо"
+          - "&aхЬиф╜ачЪДх║УхнШф╕нчВ╣хЗ╗хоГф╗муАВ"
+          - ""
+          - "&cхП│щФочз╗щЩдчЙйхУБ"
+          - "&cчз╗щЩдхЕищГи"
+  Composition-Block-Menu:
+    Title: "&bцЦ╣хЭЧцжВчОЗ: &c%blockChance%% / %compChance%%"
+    Items:
+      Current-Block:
+        Name: "%!unchangeable! internal material name%"
+        Lore:
+          - "&f%blockdata%"
+          - ""
+          - "&bцЦ╣хЭЧцжВчОЗ: &c%blockChance%%"
+          - "&bхРИцИРцжВчОЗ: &c%compChance%%"
+      Change-Table:
+        Name: "&6цЫ┤цНвцИШхИйхУБшби"
+      Configure-Table:
+        Name: "&6щЕНч╜оцИШхИйхУБшбичЪДцОЙшР╜цжВчОЗ"
+      Add-Loot-Table:
+        Active:
+          Name: "&aцИШхИйхУБшбих░Жц╖╗хКахИ░щ╗Шшодф╕ЛхИЧшбичЪДщб╢щГи"
+        Inactive:
+          Name: "&7цИШхИйхУБшбишжЖчЫЦщ╗ШшодхИЧшбиуАВ"
+        Lore:
+          - "&bщАЙцЛйхжВцЮЬцВицГ│шжБшжЖчЫЦцОЙшР╜цжВчОЗуАВ"
+          - "&bцндхЭЧя╝МцИЦхжВцЮЬцВицГ│ц╖╗хКацЯРф║ЫуАВ"
+          - "&bцОЙшР╜хЬихЕ╢щ╗Шшодф╕ЛщЩНчЪДхЯ║чбАф╕КуАВ"
+          - "&6&lц│ицДП: &bцИШхИйхУБцбМцШпчй║чЪДя╝Мш┐Щф╕кф╝ЪхПШф╕║"
+          - "&bх┐╜шзЖ"
+  Change-Loot-Table-Menu:
+    Title: "&bх░ЖчЙйхУБцПТхЕецИШхИйхУБшби"
+    Items:
+      Save-Table:
+        Name: "&aф┐ЭхнШцИШхИйхУБшби"
+        Message: "&aф┐ЭхнШф║ЖцИШхИйхУБшбиуАВ"
+  Loot-Table-List-Menu:
+    Title: "&bщЕНч╜очЙйхУБф╕вх╝ГцжВчОЗ"
+    Items:
+      Drop-Item:
+        Name: "%!unchangeable! internal material name%"
+        Lore:
+          - ""
+          - "&bф╕вх╝ГцжВчОЗ: &c%chance%%"
+  Configure-Item-Drop-Chances-Menu:
+    Title: "&bф╕вх╝ГцжВчОЗ: &c%itemChance%/100%"
+    Items:
+      Current-Item: "%я╝Бф╕НхПпцФ╣хПШя╝БхЖЕщГицЭРцЦЩхРНчз░%"
+  Reset-Delay-Menu:
+    Title: "&bх╜УхЙНх╗╢ш┐Я: &c%delay%"
+    Items:
+      Current-Delay:
+        Name: "&bх╜УхЙНх╗╢ш┐Я &c%delay%"
+      Switch:
+        Name: "&6х╝А/хЕ│цибх╝П"
+        Lore:
+          - ""
+          - "&bх░ЖчФ╡ц╡Бцибх╝ПхИЗцНвхИ░ &6TIME"
+  Reset-Percentage-Menu:
+    Title: "&bх╜УхЙНчЩ╛хИЖцпФ: &c%percentage%%"
+    Items:
+      Current-Percentage:
+        Name: "&bх╜УхЙНчЩ╛хИЖцпФ: &c%percentage%"
+      Switch:
+        Name: "&6х╝А/хЕ│цибх╝П"
+        Lore:
+          - ""
+          - "&bх░ЖчФ╡ц╡Бцибх╝ПхИЗцНвхИ░ &6х╗╢ш┐Я"
+  Efficiency-Menu:
+    Title: "&bцЬАх░ПцХИчОЗчнЙч║з: &c%level%"
+    Items:
+      Current-Level:
+        Name: "&bцЬАф╜ОцМЦчЯ┐цХИчОЗчнЙч║з: &c%level%"
+        Lore:
+          - "&bцМЦцОШчЯ┐чЙйчЪДцЬАф╜ОцХИчОЗчнЙч║з: &c%level%"
+          - ""
+          - "&6&lц│ицДП: &bф╜ащЬАшжБшО╖х╛ЧчобчРЖхСШчЪДшо╕хПп"
+          - "&bneomines.break хПпф╗еч╗Хх╝Аш┐Щф╕к!"
+  Warn-Distance-Menu:
+    Title: "&bшнжхСКш╖Эчж╗: &c%distance%"
+    Items:
+      Current-Distance:
+        Name: "&aчФ╡ц╡Бш╖Эчж╗: &c%distance%"
+
+Commands:
+  Create: "чЯ┐хЬ║ &b%mine% &7хИЫх╗║."
+  Delete: "чЯ┐хЬ║ &b%mine% &7хИащЩд."
+  Reset-Mode: "щЗНч╜о &b%mine% ф║О &a%mode%&7."
+  Delay: "х░ЖщЗНч╜ох╗╢ш┐Яшо╛ч╜оф╕║ &a%seconds% &7чзТ."
+  Reset-Percentage: "&b%mine% &7чО░хЬищЗНшо╛цЬЙ &a%percentage%% &7цЦ╣хЭЧх╖жщФо"
+  Set:
+    Success: "&b%material% &7шо╛ф╕║ &a%mine%&7. ф╜ацЬЙ &6%remainingChance%% &7хЙйф╕ЛчЪДуАВ"
+    Error: "%chance-over-100%. ф╜ацЬЙ &6%remainingChance%% &7хЙйф╕ЛчЪДуАВ"
+  Unset:
+    Clear: "чЯ┐хМ║ &a%mine% &7х╖▓швлц╕ЕщЩд"
+    Remove:
+      Success: "&b%material% &7швлчз╗щЩдф║ЖуАВф╜ацЬЙ &a%remainingChance%% &7хЙйф╕ЛчЪДуАВ"
+      Error: "&b%material% &7ф╕НхЬи...ч╗ДцИРф╕н %mine%&7. ф╜ацЬЙ &a%remainingChance%% &7хЙйф╕ЛчЪДуАВ"
+  Reset: "чЯ┐хМ║х╖▓ч╗ПшвлщЗНч╜оф║ЖуАВ"
+  Teleport:
+    Self: "ф╝ащАБшЗ│ &b%mine%."
+    Other: "ф╝ащАБчОйхо╢ &6%player% &7шЗ│ &b%mine%"
+  Set-Teleport: "хЫ║хоЪф╝ащАБ &b%mine% чЪДф╝ащАБф╜Нч╜о."
+  Set-Reset-Teleport: "шо╛ч╜ощЗНч╜оф╝ащАБф╜Нч╜о &b%mine%. &7ш┐Шх░ЖTelportPlayersToResetLocationшо╛ч╜оф╕║&aх╝АхРп"
+  Flag:
+    Move-Region: "чз╗хКихМ║хЯЯ &c%mine%."
+    Rename: "хС╜хРН &b%oldmine% &7ф╕║ &a%newmine%."
+    Replace-Mode: "шо╛ч╜оцибх╝П &b%mine% &7шЗ│ &a%arg%."
+    Teleport-Players: "ф╝ащАБчОйхо╢ &b%mine% &7шЗ│ &a%arg%."
+    Warn:
+      Warn-Hotbar: "шнжхСКшбАцЭб &b%mine% &7шо╛ч╜ошЗ│ &a%arg%."
+      Warn-Enable: "шнжхСКх╝АхРп &b%mine% &7шо╛ч╜ошЗ│ &a%arg%."
+      Warn-Global: "хЕих▒АшнжхСК &b%mine% &7шо╛ч╜ошЗ│ &a%arg%."
+      Warn-Message: "&aцЫ┤цЦ░чЪДшнжхСКц╢ИцБпуАВ"
+      Reset-Message: "&aцЫ┤цЦ░чЪДщЗНч╜оц╢ИцБпуАВ"
+      Warn-Distance: "шнжхСКш╖Эчж╗ &b%mine% &7шо╛ч╜ошЗ│ &a%arg%."
+      Warn-Seconds: "&aцЫ┤цЦ░чЪДшнжхСКчзТуАВ"
+  Start: "&aх╝АхРпчЯ┐хМ║ %mine%."
+  Stop: "&cхЕ│щЧнчЯ┐хМ║ %mine%."
+  Start-Tasks: "&aх╝АхРпф║ЖхЕищГичЪДчЯ┐хМ║"
+  Stop-Tasks: "&cхЕ│щЧнф║ЖхЕищГичЪДчЯ┐хМ║"
+  Synced: "&aSynced all mines"
+  Reload:
+    All: "&aцПТф╗╢щЗНш╜╜цИРхКЯ."
+    Mines: "&aчЯ┐хМ║щЗНш╜╜цИРхКЯ."
+    Config: "&aщЕНч╜ощЗНш╜╜цИРхКЯ."
+    Messages: "&aшпншиАцЦЗф╗╢щЗНш╜╜цИРхКЯ."
+    Properties: "&aх▒ЮцАзх╖▓щЗНш╜╜цИРхКЯ."
+
+Error-Messages:
+  No-Permission: "&cф╜ац▓бцЬЙцЭГщЩРш┐Щца╖хБЪхУж!"
+  Only-Players: "&cхПкцЬЙчОйхо╢цЙНшГ╜цЙзшбМцндхС╜ф╗дуАВ!"
+  Unknown-Command: "цЬкчЯечЪДхС╜ф╗д."
+  Unknown-Flag: "цЬкчЯечЪДцаЗх┐Ч."
+  Player-Not-Found: "чОйхо╢ &6%player% &7цЙ╛ф╕НхИ░я╝Б"
+  Mine:
+    Incomplete-Region: "ф╜ах┐Ещб╗щАЙцЛйф╕Аф╕кхМ║хЯЯя╝Б"
+    Not-Exist: "х╖ехЕ╖ф╕НхнШхЬи!"
+    Exist: "х╖ехЕ╖ф╕НхнШхЬия╝Б"
+    Cant-Reset: "ф╕НшГ╜щЗНч╜очЯ┐хЬ║"
+    Material-Not-Found: "цЭРцЦЩц▓бцЙ╛хИ░я╝Б"
+    Not-Number: "ф╜ачЪДцжВчОЗф╕АхоЪцШпцХ░хнЧя╝Б"
+    Not-Percentage: "ф╜ачЪДцжВчОЗф╕АхоЪшжБцШпчЩ╛хИЖцпФя╝Б"
+    Invalid-Chance: "ф╜ачЪДцжВчОЗх┐Ещб╗хЬи0хИ░100%ф╣ЛщЧ┤я╝Б"
+    Invalid-Range: "цВичЪДш╛УхЕех┐Ещб╗хЬи %start%-%end%ф╣ЛщЧ┤!"
+    Material-Not-Solid: "цЭРцЦЩх┐Ещб╗цШпхоЮх┐ГчЪДхЭЧя╝Б"
+    Invalid-Block-Configuration: "цЧацХИчЪДцЦ╣хЭЧщЕНч╜оя╝Б"
+    Invalid-Boolean: "ф╜ачЪДцЬАхРОф╕Аф╕кшо║чВ╣х┐Ещб╗цШпцнгчбочЪДш┐ШцШпщФЩшппчЪДя╝Б"
+    Teleport-Error: "ф╜Нч╜оф╕НхнШхЬия╝Б"
+    Block-Not-In-Composition: "цЦ╣хЭЧф╕НхЬихЬ░хЫ╛ф╕н"
+    Invalid-Region: "&cхМ║хЯЯцЧацХИя╝Б"
+    Material-In-Composition: "цЭРцЦЩх╖▓ч╗ПхЬихРИцИРцИРхКЯф║Жя╝Б"
+    Chance-Over-100: "цжВчОЗш╢Еш┐Зф║Ж100%я╝Б"
+  GUI:
+    Mine-Deleted: "ф╗ОчЯ┐хМ║х╖ехЕ╖шПЬхНХф╕Кш╕вхЗ║я╝Б"
+    Block-Deleted: "ф╗ОцЦ╣хЭЧшПЬхНХф╕Кш╕вхЗ║я╝Б"
+    Loot-Table-Change: "цИШхИйхУБцФ╣хПШф║Жя╝Б"
+    First-Page: "ф╜ах╖▓ч╗ПхЬичммф╕Ащб╡ф║Ж"
+    Last-Page: "ф╜ахЬицЬАхРОф╕Ащб╡"
+    Mine-Doesnt-Exist: "&cф╜ацГ│цЙУх╝АчЪДчЯ┐хМ║х╖▓ч╗Пф╕НхнШхЬиф║Жя╝Б"

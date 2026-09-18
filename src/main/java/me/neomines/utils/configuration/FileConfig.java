@@ -1,0 +1,101 @@
+package me.neomines.utils.configuration;
+
+import me.neomines.NeoMines;
+import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileConfig extends YamlConfiguration {
+
+    private final File file;
+
+    public FileConfig(File file) {
+        this.file = file;
+
+        if (!file.exists()) {
+            try {
+                if (this.file.getParentFile() != null) {
+                    this.file.getParentFile().mkdirs();
+                }
+                this.file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                this.load(this.file);
+            } catch (IOException | InvalidConfigurationException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public FileConfig(String filename) {
+        String path = NeoMines.getInstance().getDataFolder() + "/" + filename;
+        this.file = new File(path);
+
+        if (!file.exists()) {
+            try {
+                if (this.file.getParentFile() != null) {
+                    this.file.getParentFile().mkdirs();
+                }
+                file.createNewFile();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        } else {
+            try {
+                this.load(file);
+            } catch (InvalidConfigurationException | IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
+
+    public FileConfig(String path, String fileName) {
+        String finalPath = path + "/" + fileName;
+        File directory = new File(path);
+
+        if (!directory.exists() && !directory.mkdirs()) {
+            this.file = new File(finalPath);
+            return;
+        }
+
+        this.file = new File(finalPath);
+        if (!this.file.exists()) {
+            try {
+                this.file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            try {
+                this.load(this.file);
+            } catch (IOException | InvalidConfigurationException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void saveConfig() {
+        try {
+            save(file);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public void reloadConfig() {
+        try {
+            this.load(file);
+        } catch (IOException | InvalidConfigurationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public File getFile() {
+        return file;
+    }
+}

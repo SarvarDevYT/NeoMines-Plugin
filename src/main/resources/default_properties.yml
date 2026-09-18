@@ -1,0 +1,19 @@
+# Shaxtaning birlamchi standart sozlamalari
+# %nm% = prefiks | %mine% = shaxta nomi | %seconds% = qolgan soniyalar
+# %formattedtime% = soat, daqiqa, soniya | %time% = soniya
+# %formattedseconds% = vaqt formati (hh:mm:ss, masalan: 1:05:16)
+
+Default-Warn-Message: "%nm% &b%mine% &7shaxtasi &a%formattedseconds% &7%formattedtime%dan so'ng &cyangilanadi&7."
+Default-Reset-Message: "%nm% &b%mine% &7shaxtasi &amuvaffaqiyatli yangilandi&7."
+Default-Hotbar-Message-TIME: "&a%formattedseconds%"
+Default-Hotbar-Message-PERCENTAGE: "&e%remainingblocksper% &f| &d%resetpercentage%"
+Default-Hotbar-Message-TIME_PERCENTAGE: "&e%remainingblocksper% &f| &a%formattedseconds% &f| &d%resetpercentage%"
+
+Tool-Too-Weak: "&cQurolingiz juda zaif! Kerakli samaradorlik darajasi yetarli emas."
+
+Default-Warn-Seconds:
+  - 600
+  - 300
+  - 60
+  - 20
+  - 5

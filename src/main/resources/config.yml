@@ -1,0 +1,9 @@
+# NeoMines asosiy sozlamalari
+# Plugin prefiksi
+prefix: "&6[&bNeo&aMines&6] &7"
+
+# Yangi versiyalar chiqqanda xabar berish
+announceUpdate: true
+
+# Qo'llab-quvvatlanadigan tillar: UZ, EN, ES, CN, CUSTOM
+language: UZ

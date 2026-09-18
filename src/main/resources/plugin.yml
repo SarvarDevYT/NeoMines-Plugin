@@ -1,0 +1,105 @@
+name: ${pluginName}
+version: ${version}
+main: me.neomines.NeoMines
+api-version: '1.21'
+authors: [ NeoMinesTeam ]
+description: ${description}
+load: POSTWORLD
+depend: [ WorldEdit ]
+softdepend: [ PlaceholderAPI ]
+
+commands:
+  neomines:
+    description: NeoMines command
+    usage: /<command>
+    aliases: [ "nm", "nmine", "nmines", "neomine" ]
+
+permissions:
+  neomines.*:
+    description: Grants access to every NeoMines command.
+    default: op
+    children:
+      neomines.help: true
+      neomines.create: true
+      neomines.delete: true
+      neomines.gui: true
+      neomines.list: true
+      neomines.info: true
+      neomines.set: true
+      neomines.unset: true
+      neomines.resetmode: true
+      neomines.setdelay: true
+      neomines.resetpercentage: true
+      neomines.flag: true
+      neomines.reset: true
+      neomines.setteleport: true
+      neomines.teleport: true
+      neomines.start: true
+      neomines.stop: true
+      neomines.starttasks: true
+      neomines.stoptasks: true
+      neomines.reload: true
+      neomines.minefficiency.bypass: true
+  neomines.help:
+    description: Lets you list all mine commands.
+    default: op
+  neomines.create:
+    description: Lets you create a mine.
+    default: op
+  neomines.delete:
+    description: Lets you delete a mine.
+    default: op
+  neomines.gui:
+    description: Lets you open the gui.
+    default: op
+  neomines.list:
+    description: Lets you list all mines.
+    default: op
+  neomines.info:
+    description: Lets you display info of a mine.
+    default: op
+  neomines.set:
+    description: Lets you set the blocks of a mine.
+    default: op
+  neomines.unset:
+    description: Lets you unset the blocks of a mine.
+    default: op
+  neomines.resetmode:
+    description: Lets you set the reset mode of a mine.
+    default: op
+  neomines.setdelay:
+    description: Lets you set the reset delay of a mine.
+    default: op
+  neomines.resetpercentage:
+    description: Lets you set the reset percentage of a mine.
+    default: op
+  neomines.flag:
+    description: Lets you configure every flag of a mine.
+    default: op
+  neomines.reset:
+    description: Lets you manually reset a mine.
+    default: op
+  neomines.setteleport:
+    description: Lets you set a teleport location of a mine.
+    default: op
+  neomines.teleport:
+    description: Lets you teleport to a mine.
+    default: op
+  neomines.start:
+    description: Lets you start a mine.
+    default: op
+  neomines.stop:
+    description: Lets you stop a mine.
+    default: op
+  neomines.starttasks:
+    description: Starts all mine tasks.
+    default: op
+  neomines.stoptasks:
+    description: Stops all mine tasks.
+    default: op
+  neomines.reload:
+    description: Lets you reload the plugin.
+    default: op
+  neomines.minefficiency.bypass:
+    description: Lets you bypass min. mine efficiency lvl to break blocks.
+    default: op

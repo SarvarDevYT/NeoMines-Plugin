@@ -1,0 +1,402 @@
+Time:
+  Seconds: "soniya"
+  Second: "soniya"
+  Minutes: "daqiqa"
+  Minute: "daqiqa"
+  Hours: "soat"
+  Hour: "soat"
+
+GUI:
+  Universal:
+    Previous-Page:
+      Name: "&6&lOldingi sahifa"
+      Lore:
+        - ""
+        - "&7Oldingi sahifaga o'tish"
+    Next-Page:
+      Name: "&6&lKeyingi sahifa"
+      Lore:
+        - ""
+        - "&7Keyingi sahifaga o'tish"
+    Close:
+      Name: "&4&lYopish"
+      Lore:
+        - ""
+        - "&7Menyuni yopadi"
+    Back-To-Mine-Menu:
+      Name: "&6&lOrqaga"
+      Lore:
+        - ""
+        - "&7Shaxta boshqaruv menyusiga qaytish"
+    Back-To-Composition-Menu:
+      Name: "&6&lOrqaga"
+      Lore:
+        - ""
+        - "&7Bloklar tarkibi menyusiga qaytish"
+    Back-To-Block-Menu:
+      Name: "&6&lOrqaga"
+      Lore:
+        - ""
+        - "&7Blok sozlamalari menyusiga qaytish"
+    Increase-By: "&a+%number% ga oshirish"
+    Decrease-By: "&c-%number% ga kamaytirish"
+  Mine-List-Menu:
+    Title: "&bShaxtalar ro'yxati"
+  Mine-Menu:
+    Title: "&b%mine%"
+    Items:
+      Configure-Composition:
+        Name: "&6Bloklar tarkibini sozlash"
+        Lore:
+          - ""
+          - "&bJami to'ldirilgan: &c%chance%%"
+      Configure-Delay:
+        Name: "&6Reset vaqtini sozlash"
+        Lore:
+          - "&fVaqt bo'yicha yangilanish"
+          - ""
+          - "&bReset vaqti: &c%delay% soniya"
+          - "&bReset foizi: &c%percentage%%"
+          - ""
+          - "&a&lRejimni o'zgartirish uchun o'ng tugmani bosing"
+      Configure-Percentage:
+        Name: "&6Reset foizini sozlash"
+        Lore:
+          - "&fFoiz bo'yicha yangilanish"
+          - ""
+          - "&bReset vaqti: &c%delay% soniya"
+          - "&bReset foizi: &c%percentage%%"
+          - ""
+          - "&a&lRejimni o'zgartirish uchun o'ng tugmani bosing"
+      Configure-TimePercentage:
+        Name: "&6VAQT-FOIZ BIRGALIKDA"
+        Lore:
+          - "&fVaqt va foiz bo'yicha birgalikda"
+          - ""
+          - "&bReset vaqti: &c%delay% soniya"
+          - "&bReset foizi: &c%percentage%%"
+          - ""
+          - "&a&lRejimni o'zgartirish uchun o'ng tugmani bosing"
+      Flag-Menu:
+        Name: "&6Flaglarni sozlash"
+        Lore:
+          - ""
+          - "&eOgohlantirish: &f%warn%"
+          - "  &eGlobal: &f%global%"
+          - "  &eActionbar: &f%actionbar%"
+          - "  &eMasofa: &c%warndistance%"
+          - "&eTeleport: &f%teleports%"
+          - "  &eReset nuqtasiga: &f%resettp%"
+          - "&eHavo almashtirish: &f%replacemode%"
+      Efficiency-Lvl:
+        Name: "&6Kerakli samaradorlik (Eff. Lvl)"
+        Lore:
+          - ""
+          - "&bDaraja: &c%level%"
+          - ""
+          - "&fUshbu shaxtadagi bloklarni qazish"
+          - "&fuchun kerakli min. pickaxe samaradorligi."
+          - ""
+          - "&6neomines.break &fruxsati buni"
+          - "&faylanib o'tish imkonini beradi!"
+      Reset-Mine:
+        Name: "&cShaxtani yangilash"
+      Teleport:
+        Name: "&5Shaxtaga teleport"
+        Lore:
+          - "&bSizni shaxta hududiga teleport qiladi"
+      Delete:
+        Name: "&4&lShaxtani o'chirish"
+      Start-Stop:
+        Active:
+          Name: "&aShaxta faol (Yoqilgan)"
+        Inactive:
+          Name: "&7Shaxta nofaol (O'chirilgan)"
+        Lore:
+          - "&bShaxta avtomatik yangilanishi kerakligini belgilang"
+      Back:
+        Name: "&4&lOrqaga"
+        Lore:
+          - ""
+          - "&7Shaxta menyusiga qaytadi"
+      Running:
+        Active:
+          Name: "&aShaxta ayni vaqtda ishlamoqda"
+          Lore:
+            - "&7Shaxtaning ish holati faol."
+            - "&7Agar to'xtasa, sababi shu yerda ko'rinadi."
+        Inactive:
+          Name: "&7Shaxta ishlamayapti, sababi:"
+          Reasons:
+            Invalid-Region: "&cHudud noto'g'ri tanlangan"
+            Stopped: "&cShaxta to'xtatilgan"
+            No-Composition: "&cTarkibida bloklar yo'q"
+            Invalid-Delay: "&cReset vaqti noto'g'ri: %delay%"
+  Composition-Menu:
+    Title: "&bTarkib: &c%chance%%"
+    Items:
+      Composition-Block:
+        Name: "%!unchangeable! internal material name%"
+        Lore:
+          - "&f%blockdata%"
+          - ""
+          - "&bPaydo bo'lish ehtimoli: &c%chance%%"
+          - ""
+          - "&aSozlash uchun chap tugmani bosing"
+      Info:
+        Name: "&6Ma'lumot:"
+        Lore:
+          - "&aInventardagi buyumni chap/o'ng"
+          - "&abosish orqali shaxtaga qo'shing."
+          - ""
+          - "&cTarkibdagi blokni o'chirish uchun"
+          - "&co'ng tugmani bosing."
+  Composition-Block-Menu:
+    Title: "&bBlok foizi: &c%blockChance%% / %compChance%%"
+    Items:
+      Current-Block:
+        Name: "%!unchangeable! internal material name%"
+        Lore:
+          - "&f%blockdata%"
+          - ""
+          - "&bBlok ehtimoli: &c%blockChance%%"
+          - "&bJami tarkib foizi: &c%compChance%%"
+      Change-Table:
+        Name: "&6Loot table'ni o'zgartirish"
+      Configure-Table:
+        Name: "&6Drop ehtimollarini sozlash"
+      Add-Loot-Table:
+        Active:
+          Name: "&a&lMaxsus droplar qo'shiladi"
+          Lore:
+            - ""
+            - "&fMaxsus droplar odatiy dropga"
+            - "&fustama sifatida tushadi"
+        Inactive:
+          Name: "&7Faqat maxsus droplar"
+          Lore:
+            - ""
+            - "&fOdatiy drop butunlay o'chiriladi."
+            - "&fFaqat maxsus sozlangan droplar tushadi."
+  Change-Loot-Table-Menu:
+    Title: "&bBuyumlarni loot table'ga soling"
+    Items:
+      Save-Table:
+        Name: "&aLoot table'ni saqlash"
+        Message: "&aLoot table muvaffaqiyatli saqlandi."
+  Loot-Table-List-Menu:
+    Title: "&bDrop ehtimollarini sozlash"
+    Items:
+      Drop-Item:
+        Name: "!unchangeable! internal material name"
+        Lore:
+          - ""
+          - "&bTushish ehtimoli: &c%chance%%"
+  Configure-Item-Drop-Chances-Menu:
+    Title: "&bTushish ehtimoli: &c%itemChance%/100%"
+    Items:
+      Current-Item: "!unchangeable! internal item"
+      Fortune:
+        Active:
+          Name: "&a&lFortune (Omad) yoqilgan"
+          Lore:
+            - ""
+            - "&fPickaxe Fortune darajasi tushadigan"
+            - "&fbuyumlar soniga ta'sir qiladi"
+        Inactive:
+          Name: "&7Fortune (Omad) o'chirilgan"
+          Lore:
+            - ""
+            - "&fFortune ushbu buyum miqdoriga"
+            - "&fta'sir qilmaydi"
+  Reset-Delay-Menu:
+    Title: "&bJoriy vaqt: &c%delay% soniya"
+    Items:
+      Current-Delay:
+        Name: "&bJoriy vaqt: &c%delay% soniya"
+      Switch:
+        Name: "&6Sahifani o'zgartirish"
+        Lore:
+          - ""
+          - "&bSahifani &6FOIZ &brejimiga o'tkazish"
+  Reset-Percentage-Menu:
+    Title: "&bJoriy foiz: &c%percentage%%"
+    Items:
+      Current-Percentage:
+        Name: "&bJoriy foiz: &c%percentage%%"
+      Switch:
+        Name: "&6Sahifani o'zgartirish"
+        Lore:
+          - ""
+          - "&bSahifani &6VAQT &brejimiga o'tkazish"
+  Flags-Menu:
+    Title: "&6&lShaxta flaglarini sozlash"
+    Items:
+      Warn:
+        Active:
+          Name: "&a&lOgohlantirish: Yoqilgan"
+          Lore:
+            - ""
+            - "&fShaxta belgilangan soniyalarda va"
+            - "&fyangilanish paytida xabar beradi"
+        Inactive:
+          Name: "&7Ogohlantirish: O'chirilgan"
+          Lore:
+            - ""
+            - "&fShaxta hech qanday ogohlantirish bermaydi"
+      Warn-Global:
+        Active:
+          Name: "&a&lGlobal ogohlantirish: Yoqilgan"
+          Lore:
+            - ""
+            - "&fAgar ogohlantirish yoqilgan bo'lsa,"
+            - "&fbutun serverdagi o'yinchilarga ko'rinadi"
+        Inactive:
+          Name: "&7Global ogohlantirish: O'chirilgan"
+          Lore:
+            - ""
+            - "&fFaqat yaqin atrofdagi o'yinchilarga ko'rinadi"
+      Warn-Hotbar:
+        Active:
+          Name: "&a&lActionbar xabarnomasi: Yoqilgan"
+          Lore:
+            - ""
+            - "&fShaxta ma'lumotlari o'yinchining"
+            - "&fAction bar qismida ko'rsatiladi"
+        Inactive:
+          Name: "&7Actionbar xabarnomasi: O'chirilgan"
+          Lore:
+            - ""
+            - "&fAction bar orqali xabar berilmaydi"
+      Teleport-Players:
+        Active:
+          Name: "&a&lO'yinchilarni teleport qilish: Yoqilgan"
+          Lore:
+            - ""
+            - "&fReset vaqtida o'yinchilar shaxta ustiga"
+            - "&fyoki belgilangan nuqtaga ko'chiriladi"
+        Inactive:
+          Name: "&7O'yinchilarni teleport qilish: O'chirilgan"
+          Lore:
+            - ""
+            - "&fReset vaqtida o'yinchilar qimirlatilmaydi"
+      Teleport-Players-To-Reset-Location:
+        Active:
+          Name: "&aTeleport nuqtasi: Maxsus joylashuv"
+          Lore:
+            - ""
+            - "&fReset paytida /nm setresettp <mine>"
+            - "&forqali belgilangan joyga ko'chiriladi"
+        Inactive:
+          Name: "&2Teleport nuqtasi: Shaxta tepasi"
+          Lore:
+            - ""
+            - "&fReset paytida o'yinchilar to'g'ridan-to'g'ri"
+            - "&fshaxtaning eng yuqori qismiga ko'chiriladi"
+      Replace-Mode:
+        Active:
+          Name: "&a&lFaqat havoni to'ldirish"
+          Lore:
+            - ""
+            - "&fFaqat qazilgan (bo'sh) joylar yangilanadi,"
+            - "&fqolgan bloklarga tegmaydi"
+        Inactive:
+          Name: "&7Barcha bloklarni yangilash"
+          Lore:
+            - ""
+            - "&fShaxtadagi barcha bloklar boshidan reset bo'ladi"
+      Warn-Distance:
+        Name: "&6Ogohlantirish masofasini sozlash"
+        Lore:
+          - "&bJoriy masofa: &c%distance% blok"
+  Efficiency-Menu:
+    Title: "&bDaraja: &c%level%"
+    Items:
+      Current-Level:
+        Name: "&bEff. darajasi: &c%level%"
+        Lore:
+          - ""
+          - "&6neomines.break &fruxsatiga ega bo'lganlar"
+          - "&fbunda cheklovsiz qaza oladi!"
+  Warn-Distance-Menu:
+    Title: "&bOgohlantirish masofasi: &c%distance%"
+    Items:
+      Current-Distance:
+        Name: "&bJoriy masofa: &c%distance% blok"
+
+Commands:
+  Create: "&b%mine% &7nomli yangi shaxta muvaffaqiyatli yaratildi."
+  Delete: "&b%mine% &7shaxtasi butunlay o'chirildi."
+  Reset-Mode: "&b%mine% &7shaxtasining yangilanish rejimi &a%mode% &7qilib belgilandi."
+  Delay: "Reset vaqti &a%seconds% &7soniya qilib belgilandi."
+  Reset-Percentage: "&b%mine% &7shaxtasida &a%percentage%% &7blok qolganda avtomatik yangilanadi."
+  Set:
+    Success: "&a%mine% &7shaxtasiga &b%material% &7qo'shildi. Yana &6%remainingChance%% &7imkoniyat qoldi."
+    Error: "%chance-over-100%. Yana &6%remainingChance%% &7imkoniyat qoldi."
+  Unset:
+    Clear: "&a%mine% &7shaxtasining barcha bloklar tarkibi tozalandi."
+    Remove:
+      Success: "&b%material% &7olib tashlandi. Yana &a%remainingChance%% &7imkoniyat qoldi."
+      Error: "&b%material% &a%mine% &7tarkibida topilmadi. Yana &a%remainingChance%% &7imkoniyat qoldi."
+  Reset: "Shaxta muvaffaqiyatli yangilandi."
+  Teleport:
+    Self: "&b%mine% &7shaxtasiga teleportatsiya qilindingiz."
+    Other: "&6%player% &b%mine% &7shaxtasiga teleportatsiya qilindi."
+  Set-Teleport: "&b%mine% &7shaxtasiga asosiy teleport nuqtasi o'rnatildi."
+  Set-Reset-Teleport: "&b%mine% &7uchun reset teleport nuqtasi o'rnatildi va avtomatik yoqildi."
+  Flag:
+    Move-Region: "&c%mine% &7shaxtasining hududi ko'chirildi."
+    Rename: "&b%oldmine% &7shaxtasi &a%newmine% &7nomiga o'zgartirildi."
+    Replace-Mode: "&b%mine% &7shaxtasining almashtirish rejimi &a%arg% &7qilib belgilandi."
+    Teleport-Players: "&b%mine% &7o'yinchilarni teleport qilish flagi &a%arg% &7qilib belgilandi."
+    Warn:
+      Warn-Hotbar: "&b%mine% &7Actionbar ogohlantirishi &a%arg% &7qilib belgilandi."
+      Warn-Enable: "&b%mine% &7ogohlantirish flagi &a%arg% &7qilib belgilandi."
+      Warn-Global: "&b%mine% &7global ogohlantirish flagi &a%arg% &7qilib belgilandi."
+      Warn-Message: "&aOgohlantirish xabari muvaffaqiyatli yangilandi."
+      Reset-Message: "&aReset xabari muvaffaqiyatli yangilandi."
+      Warn-Distance: "&b%mine% &7ogohlantirish masofasi &a%arg% &7blok qilib belgilandi."
+      Warn-Seconds: "&aOgohlantirish soniyalari muvaffaqiyatli yangilandi."
+  Start: "&a%mine% &7shaxtasi ishga tushirildi."
+  Stop: "&c%mine% &7shaxtasi to'xtatildi."
+  Start-Tasks: "&aBarcha shaxta taymerlari ishga tushirildi."
+  Stop-Tasks: "&cBarcha shaxta taymerlari to'xtatildi."
+  Sync: "&aBarcha shaxtalar sinxron ravishda yangilandi."
+  Reload:
+    All: "&aNeoMines plugini to'liq qayta yuklandi."
+    Mines: "&aBarcha shaxtalar qayta yuklandi."
+    Config: "&aAsosiy sozlamalar (config) qayta yuklandi."
+    Messages: "&aBarcha xabarlar fayllari qayta yuklandi."
+    Properties: "&aShaxta parametrlari qayta yuklandi."
+
+Error-Messages:
+  No-Permission: "&cSizda bu amalni bajarish uchun ruxsat yo'q!"
+  Only-Players: "&cBu buyruqni faqat o'yinchilar bajara oladi!"
+  Unknown-Command: "&cNoma'lum buyruq. Yordam uchun: &b/nm help"
+  Unknown-Flag: "&cNoma'lum flag."
+  Player-Not-Found: "&6%player% &7nomli o'yinchi topilmadi!"
+  Mine:
+    Incomplete-Region: "&cAvval WorldEdit bilan hududni to'liq belgilashingiz kerak!"
+    Not-Exist: "&cBunday shaxta mavjud emas!"
+    Exist: "&cBu nomdagi shaxta allaqachon mavjud!"
+    Cant-Reset: "&cShaxtani yangilab bo'lmadi! Hudud yoki bloklar tarkibini tekshiring."
+    Material-Not-Found: "&cMaterial topilmadi!"
+    Not-Number: "&cKiritilgan ehtimollik son bo'lishi kerak!"
+    Not-Percentage: "&cKiritilgan qiymat foizda bo'lishi kerak! (Masalan: 50%)"
+    Invalid-Chance: "&cEhtimollik 0% dan 100% gacha bo'lishi shart!"
+    Invalid-Range: "&cQiymat %start% va %end% oralig'ida bo'lishi kerak!"
+    Material-Not-Solid: "&cTanlangan material qattiq blok bo'lishi kerak!"
+    Invalid-Block-Configuration: "&cBlok konfiguratsiyasi noto'g'ri!"
+    Invalid-Boolean: "&cOxirgi argument faqat true yoki false bo'lishi kerak!"
+    Teleport-Error: "&cTeleport nuqtasi belgilanmagan!"
+    Block-Not-In-Composition: "&cBu blok shaxta tarkibida mavjud emas!"
+    Invalid-Region: "&cHudud noto'g'ri belgilangan!"
+    Material-In-Composition: "&cBu material allaqachon tarkibda mavjud!"
+    Chance-Over-100: "&cJami ehtimollik 100% dan oshib ketadi!"
+  GUI:
+    Mine-Deleted: "&cShaxta o'chirilganligi sababli menyudan chiqildi!"
+    Block-Deleted: "&cBlok o'chirilganligi sababli menyudan chiqildi!"
+    Loot-Table-Change: "&aLoot table muvaffaqiyatli yangilandi!"
+    First-Page: "&eSiz allaqachon birinchi sahifadasiz."
+    Last-Page: "&eSiz eng oxirgi sahifadasiz."
+    Mine-Doesnt-Exist: "&cSiz ochmoqchi bo'lgan shaxta endi mavjud emas!"
