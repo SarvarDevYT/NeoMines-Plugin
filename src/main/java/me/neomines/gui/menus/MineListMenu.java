@@ -7,12 +7,14 @@ import me.neomines.mine.CuboidNeoMine;
 import me.neomines.mine.components.NeoMineBlock;
 import me.neomines.schedulers.MineManager;
 import me.neomines.utils.ItemStackBuilder;
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -43,6 +45,7 @@ public class MineListMenu extends PaginatedMenu {
     }
 
     @Override
+    @SuppressWarnings("null")
     public void handleMenu(InventoryClickEvent event) {
         event.setCancelled(true);
         ItemStack itemStack = event.getCurrentItem();
@@ -50,7 +53,8 @@ public class MineListMenu extends PaginatedMenu {
             return;
         }
 
-        if (itemStack.getItemMeta() == null) {
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        if (itemMeta == null) {
             return;
         }
 
@@ -84,7 +88,11 @@ public class MineListMenu extends PaginatedMenu {
                     }
                     break;
                 default:
-                    String displayName = ChatColor.stripColor(event.getCurrentItem().getItemMeta().getDisplayName());
+                    String displayName = "";
+                    Component comp = itemMeta.displayName();
+                    if (comp != null) {
+                        displayName = PlainTextComponentSerializer.plainText().serialize(comp).trim();
+                    }
                     CuboidNeoMine targetMine = MineManager.getInstance().getMine(displayName);
                     if (targetMine != null) {
                         new MineMenu(playerMenuUtility, targetMine).open();
@@ -97,6 +105,7 @@ public class MineListMenu extends PaginatedMenu {
     }
 
     @Override
+    @SuppressWarnings("null")
     public void setMenuItems() {
         addMenuBorder();
 
@@ -110,7 +119,10 @@ public class MineListMenu extends PaginatedMenu {
 
                     Material material = Material.STICK;
                     if (!cuboidNeoMine.getBlocks().isEmpty()) {
-                        NeoMineBlock maxBlock = cuboidNeoMine.getBlocks().stream().max(Comparator.comparingDouble(NeoMineBlock::getChance)).orElse(null);
+                        NeoMineBlock maxBlock = cuboidNeoMine.getBlocks().stream()
+                                .filter(Objects::nonNull)
+                                .max(Comparator.comparingDouble(b -> b.getChance()))
+                                .orElse(null);
                         if (maxBlock != null) {
                             material = maxBlock.getBlockData().getMaterial();
                         }
@@ -122,27 +134,27 @@ public class MineListMenu extends PaginatedMenu {
 
                     ArrayList<String> lore = new ArrayList<>();
                     lore.add("");
-                    lore.add(ChatColor.AQUA + "Composition:");
+                    lore.add("§bTarkibi:");
                     int miniIndex = 1;
                     for (NeoMineBlock block : cuboidNeoMine.getBlocks()) {
-                        lore.add(ChatColor.RED + "  " + miniIndex + ". " + ChatColor.GOLD + block.getBlockData().getMaterial() + ": " + ChatColor.RED + block.getChance() + "%");
+                        lore.add("§c  " + miniIndex + ". §6" + block.getBlockData().getMaterial() + ": §c" + block.getChance() + "%");
                         miniIndex++;
                     }
-                    lore.add(ChatColor.AQUA + "Delay: " + ChatColor.RED + cuboidNeoMine.getResetDelay());
-                    lore.add(ChatColor.AQUA + "Reset percentage: " + ChatColor.RED + cuboidNeoMine.getResetPercentage() + "%");
-                    lore.add(ChatColor.AQUA + "Replace mode: " + ChatColor.RED + cuboidNeoMine.isReplaceMode());
-                    lore.add(ChatColor.AQUA + "Warns: " + ChatColor.RED + cuboidNeoMine.isWarn());
-                    lore.add(ChatColor.AQUA + "  Warns hotbar: " + ChatColor.RED + cuboidNeoMine.isWarnHotbar());
-                    lore.add(ChatColor.AQUA + "  Warns globally: " + ChatColor.RED + cuboidNeoMine.isWarnGlobal());
+                    lore.add("§bKutish vaqti: §c" + cuboidNeoMine.getResetDelay());
+                    lore.add("§bReset foizi: §c" + cuboidNeoMine.getResetPercentage() + "%");
+                    lore.add("§bReplace rejimi: §c" + cuboidNeoMine.isReplaceMode());
+                    lore.add("§bOgohlantirish: §c" + cuboidNeoMine.isWarn());
+                    lore.add("§b  Hotbarda: §c" + cuboidNeoMine.isWarnHotbar());
+                    lore.add("§b  Global: §c" + cuboidNeoMine.isWarnGlobal());
                     String warnSeconds = cuboidNeoMine.getWarnSeconds().toString();
-                    lore.add(ChatColor.AQUA + "  Warn seconds: " + ChatColor.RED + warnSeconds.substring(1, warnSeconds.length() - 1));
-                    lore.add(ChatColor.AQUA + "  Warn distance: " + ChatColor.RED + cuboidNeoMine.getWarnDistance());
-                    lore.add(ChatColor.AQUA + "Is stopped: " + ChatColor.RED + cuboidNeoMine.isStopped());
+                    lore.add("§b  Ogohlantirish soniyalari: §c" + warnSeconds.substring(1, warnSeconds.length() - 1));
+                    lore.add("§b  Ogohlantirish masofasi: §c" + cuboidNeoMine.getWarnDistance());
+                    lore.add("§bTo'xtatilgan: §c" + cuboidNeoMine.isStopped());
 
                     ItemStack mineItem = ItemStackBuilder.buildItem(material,
                             !cuboidNeoMine.isStopped() && cuboidNeoMine.isRunnable()
-                                    ? ChatColor.GREEN + cuboidNeoMine.getName()
-                                    : ChatColor.RED + cuboidNeoMine.getName(),
+                                    ? "§a" + cuboidNeoMine.getName()
+                                    : "§c" + cuboidNeoMine.getName(),
                             lore);
 
                     inventory.addItem(mineItem);

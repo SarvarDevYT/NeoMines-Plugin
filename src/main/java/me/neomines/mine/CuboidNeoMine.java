@@ -12,7 +12,6 @@ import me.neomines.mine.components.NeoMineResetMode;
 import me.neomines.utils.Utils;
 import me.neomines.utils.configuration.FileConfig;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -31,7 +30,7 @@ import java.util.*;
 import java.util.logging.Logger;
 
 @SerializableAs("CuboidNeoMine")
-public class CuboidNeoMine extends AbstractNeoMine implements Cloneable, ConfigurationSerializable {
+public class CuboidNeoMine extends AbstractNeoMine implements ConfigurationSerializable {
 
     private final Random random = new Random();
     private File file;
@@ -73,12 +72,12 @@ public class CuboidNeoMine extends AbstractNeoMine implements Cloneable, Configu
                 loadable = false;
             }
 
-            if (minimumPoint == null || maximumPoint == null || !Objects.equals(minimumPoint.getWorld(), maximumPoint.getWorld())) {
+            if (minimumPoint == null || maximumPoint == null || minimumPoint.getWorld() == null || !Objects.equals(minimumPoint.getWorld(), maximumPoint.getWorld())) {
                 logger.severe("Could not load locations for mine " + name + ", does the world exist?");
                 loadable = false;
             }
 
-            if (loadable && minimumPoint.getWorld() != null) {
+            if (loadable && minimumPoint != null && maximumPoint != null && minimumPoint.getWorld() != null) {
                 region = new CuboidRegion(BukkitAdapter.adapt(minimumPoint.getWorld()),
                         BlockVector3.at(minimumPoint.getX(), minimumPoint.getY(), minimumPoint.getZ()),
                         BlockVector3.at(maximumPoint.getX(), maximumPoint.getY(), maximumPoint.getZ()));
@@ -95,7 +94,8 @@ public class CuboidNeoMine extends AbstractNeoMine implements Cloneable, Configu
 
         NeoMineResetMode resetMode = NeoMineResetMode.TIME;
         if (serializedNeoMine.containsKey("resetMode")) {
-            resetMode = Enums.getIfPresent(NeoMineResetMode.class, (String) serializedNeoMine.get("resetMode")).or(NeoMineResetMode.TIME);
+            String modeStr = Objects.toString(serializedNeoMine.get("resetMode"), "TIME");
+            resetMode = Enums.getIfPresent(NeoMineResetMode.class, modeStr).or(NeoMineResetMode.TIME);
         }
 
         int resetDelay = 0;
@@ -222,13 +222,17 @@ public class CuboidNeoMine extends AbstractNeoMine implements Cloneable, Configu
         Map<String, Object> mapSerializer = new LinkedHashMap<>();
         mapSerializer.put("name", name);
 
-        if (region != null && region.getWorld() != null) {
-            Map<String, Object> mappedRegion = new LinkedHashMap<>();
-            mappedRegion.put("type", "CUBOID");
-            mappedRegion.put("world", region.getWorld().getName());
-            mappedRegion.put("p1", BukkitAdapter.adapt(BukkitAdapter.adapt(region.getWorld()), region.getMinimumPoint()));
-            mappedRegion.put("p2", BukkitAdapter.adapt(BukkitAdapter.adapt(region.getWorld()), region.getMaximumPoint()));
-            mapSerializer.put("region", mappedRegion);
+        if (region != null) {
+            com.sk89q.worldedit.world.World regionWorld = region.getWorld();
+            if (regionWorld != null) {
+                Map<String, Object> mappedRegion = new LinkedHashMap<>();
+                mappedRegion.put("type", "CUBOID");
+                mappedRegion.put("world", regionWorld.getName());
+                World bukkitWorld = BukkitAdapter.adapt(regionWorld);
+                mappedRegion.put("p1", BukkitAdapter.adapt(bukkitWorld, region.getMinimumPoint()));
+                mappedRegion.put("p2", BukkitAdapter.adapt(bukkitWorld, region.getMaximumPoint()));
+                mapSerializer.put("region", mappedRegion);
+            }
         }
 
         ArrayList<Map<String, Object>> tempSerializeBlocks = new ArrayList<>();
@@ -278,7 +282,7 @@ public class CuboidNeoMine extends AbstractNeoMine implements Cloneable, Configu
 
             if (efficiencyLvl < getMinEfficiencyLvl()) {
                 event.setCancelled(true);
-                player.sendMessage(NeoMines.PREFIX + ChatColor.translateAlternateColorCodes('&',
+                player.sendMessage(NeoMines.PREFIX + Utils.color(
                         NeoMines.getInstance().getDefaultString("Tool-Too-Weak")
                                 .replaceAll("%level%", String.valueOf(minEfficiencyLvl))));
                 return;

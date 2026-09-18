@@ -5,7 +5,6 @@ import me.neomines.gui.Menu;
 import me.neomines.gui.PlayerMenuUtility;
 import me.neomines.mine.CuboidNeoMine;
 import me.neomines.utils.ItemStackBuilder;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -170,7 +169,7 @@ public class MineMenu extends Menu {
 
         // Start / Stop
         inventory.setItem(45, ItemStackBuilder.buildItem(!mine.isStopped() ? Material.REDSTONE_TORCH : Material.LEVER,
-                !mine.isStopped() ? plugin.getLangString("GUI.Mine-Menu.Items.Start-Stop.Active.Name") : ChatColor.GRAY + plugin.getLangString("GUI.Mine-Menu.Items.Start-Stop.Inactive.Name"),
+                !mine.isStopped() ? plugin.getLangString("GUI.Mine-Menu.Items.Start-Stop.Active.Name") : "§7" + plugin.getLangString("GUI.Mine-Menu.Items.Start-Stop.Inactive.Name"),
                 plugin.getLangStringList("GUI.Mine-Menu.Items.Start-Stop.Lore")));
 
         // Go back

@@ -2,6 +2,7 @@ package me.neomines.gui;
 
 import me.neomines.utils.ItemStackBuilder;
 import me.neomines.utils.Utils;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -26,7 +27,7 @@ public abstract class Menu implements InventoryHolder {
     public abstract void setMenuItems();
 
     public void open() {
-        inventory = Bukkit.createInventory(this, getSlots(), getMenuName());
+        inventory = Bukkit.createInventory(this, getSlots(), LegacyComponentSerializer.legacySection().deserialize(getMenuName()));
         this.setMenuItems();
         playerMenuUtility.getOwner().openInventory(inventory);
     }

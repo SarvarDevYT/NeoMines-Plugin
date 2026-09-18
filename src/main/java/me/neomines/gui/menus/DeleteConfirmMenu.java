@@ -6,7 +6,6 @@ import me.neomines.gui.PlayerMenuUtility;
 import me.neomines.mine.CuboidNeoMine;
 import me.neomines.schedulers.MineManager;
 import me.neomines.utils.ItemStackBuilder;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -25,7 +24,7 @@ public class DeleteConfirmMenu extends Menu {
 
     @Override
     public String getMenuName() {
-        return "Delete " + mine.getName() + "?";
+        return mine.getName() + " shaxtasini o'chirish?";
     }
 
     @Override
@@ -57,8 +56,8 @@ public class DeleteConfirmMenu extends Menu {
 
     @Override
     public void setMenuItems() {
-        inventory.setItem(0, ItemStackBuilder.buildItem(Material.GREEN_STAINED_GLASS_PANE, ChatColor.GREEN + "" + ChatColor.BOLD + "CONFIRM", "", ChatColor.RED + "Permanently deletes this mine"));
-        inventory.setItem(8, ItemStackBuilder.buildItem(Material.RED_STAINED_GLASS_PANE, ChatColor.DARK_RED + "" + ChatColor.BOLD + "CANCEL", "", ChatColor.GREEN + "Cancels the process"));
+        inventory.setItem(0, ItemStackBuilder.buildItem(Material.GREEN_STAINED_GLASS_PANE, "§a§lTASDIQLASH", "", "§cShaxtani butunlay o'chirib tashlaydi"));
+        inventory.setItem(8, ItemStackBuilder.buildItem(Material.RED_STAINED_GLASS_PANE, "§4§lBEKOR QILISH", "", "§aJarayonni bekor qiladi"));
         setFillerGlass();
     }
 }

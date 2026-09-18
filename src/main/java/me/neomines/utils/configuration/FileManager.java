@@ -1,8 +1,8 @@
 package me.neomines.utils.configuration;
 
 import me.neomines.NeoMines;
+import me.neomines.utils.Utils;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 
 import java.io.File;
 import java.nio.file.StandardCopyOption;
@@ -34,7 +34,7 @@ public class FileManager {
         if (langCfg == null || !langCfg.contains(str)) {
             return "Error loading: " + str + ", " + plugin.getConfig().getString("language");
         }
-        return ChatColor.translateAlternateColorCodes('&', langCfg.getString(str));
+        return Utils.color(langCfg.getString(str));
     }
 
     public List<Integer> getDefaultIntegers(String str) {
@@ -49,7 +49,7 @@ public class FileManager {
             return Arrays.asList("Could not load ", str, "language: " + plugin.getConfig().getString("language"));
         }
         List<String> translatedList = new ArrayList<>();
-        langCfg.getStringList(str).forEach(s -> translatedList.add(ChatColor.translateAlternateColorCodes('&', s)));
+        langCfg.getStringList(str).forEach(s -> translatedList.add(Utils.color(s)));
         return translatedList;
     }
 
@@ -66,7 +66,7 @@ public class FileManager {
         plugin.reloadConfig();
 
         String prefix = plugin.getConfig().getString("prefix", "&6[&bNeo&aMines&6] &7");
-        NeoMines.PREFIX = ChatColor.translateAlternateColorCodes('&', prefix);
+        NeoMines.PREFIX = Utils.color(prefix);
     }
 
     public void setupMinesFolder() {

@@ -85,7 +85,7 @@ public class MineManager extends BukkitRunnable {
             return loadedMines;
         }
 
-        File[] files = file.listFiles(File::isFile);
+        File[] files = file.listFiles(f -> f != null && f.isFile());
         if (files == null) {
             return loadedMines;
         }

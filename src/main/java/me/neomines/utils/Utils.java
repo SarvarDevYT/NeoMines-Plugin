@@ -35,6 +35,13 @@ import java.util.Map;
 
 public class Utils {
 
+    @SuppressWarnings("deprecation")
+    public static String color(String text) {
+        if (text == null) return "";
+        return ChatColor.translateAlternateColorCodes('&', text);
+    }
+
+    @SuppressWarnings("deprecation")
     public static String setPlaceholders(String input, AbstractNeoMine mine) {
         if (input == null) return "";
 
@@ -119,8 +126,9 @@ public class Utils {
 
     @Nullable
     public static String regionToStr(@Nonnull Region region) {
-        if (region.getWorld() == null) return null;
-        return region.getWorld().getName() + ";"
+        com.sk89q.worldedit.world.World world = region.getWorld();
+        if (world == null) return null;
+        return world.getName() + ";"
                 + region.getMinimumPoint().x() + ";"
                 + region.getMinimumPoint().y() + ";"
                 + region.getMinimumPoint().z() + ";"
@@ -132,7 +140,8 @@ public class Utils {
     @Nonnull
     public static String[] regionToArray(@Nonnull Region region) {
         String[] strings = new String[7];
-        strings[0] = region.getWorld() != null ? region.getWorld().getName() : "";
+        com.sk89q.worldedit.world.World world = region.getWorld();
+        strings[0] = world != null ? world.getName() : "";
         BlockVector3 minP = region.getMinimumPoint();
         BlockVector3 maxP = region.getMaximumPoint();
         strings[1] = String.valueOf(minP.x());

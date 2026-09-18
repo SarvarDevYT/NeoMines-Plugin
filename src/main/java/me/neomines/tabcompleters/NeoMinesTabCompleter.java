@@ -69,7 +69,11 @@ public class NeoMinesTabCompleter implements TabCompleter {
                     case "tp":
                         return null; // delegates to online players
                     case "resetmode":
-                        return StringUtil.copyPartialMatches(args[2], Arrays.stream(NeoMineResetMode.values()).map(Enum::name).collect(Collectors.toList()), completions);
+                        List<String> resetModes = new ArrayList<>();
+                        for (NeoMineResetMode mode : NeoMineResetMode.values()) {
+                            resetModes.add(mode.name());
+                        }
+                        return StringUtil.copyPartialMatches(args[2], resetModes, completions);
                 }
                 break;
             }

@@ -6,7 +6,7 @@ import me.neomines.gui.PlayerMenuUtility;
 import me.neomines.mine.components.NeoMineBlock;
 import me.neomines.mine.components.NeoMineLootItem;
 import me.neomines.utils.ItemStackBuilder;
-import org.bukkit.ChatColor;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -29,7 +29,7 @@ public class LootItemListMenu extends Menu {
 
     @Override
     public String getMenuName() {
-        return ChatColor.AQUA + "Configure item drop chances";
+        return "§bTushish ehtimollarini sozlash";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class LootItemListMenu extends Menu {
             if (itemMeta != null) {
                 List<String> itemLore = NeoMines.getInstance().getLangStringList("GUI.Loot-Table-List-Menu.Items.Drop-Item.Lore");
                 itemLore.replaceAll(s -> s.replaceAll("%chance%", String.valueOf(lootItem.getChance())));
-                itemMeta.setLore(itemLore);
+                itemMeta.lore(itemLore.stream().map(LegacyComponentSerializer.legacySection()::deserialize).toList());
                 itemStack.setItemMeta(itemMeta);
             }
             inventory.setItem(i, itemStack);

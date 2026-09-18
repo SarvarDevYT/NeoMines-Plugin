@@ -101,7 +101,11 @@ public final class NeoMines extends JavaPlugin {
     @Override
     public void onDisable() {
         if (MineManager.getInstance() != null && MineManager.getInstance().getMines() != null) {
-            MineManager.getInstance().getMines().forEach(CuboidNeoMine::save);
+            for (CuboidNeoMine mine : MineManager.getInstance().getMines()) {
+                if (mine != null) {
+                    mine.save();
+                }
+            }
         }
 
         plugin = null;

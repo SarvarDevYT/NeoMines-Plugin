@@ -6,7 +6,6 @@ import me.neomines.gui.PlayerMenuUtility;
 import me.neomines.mine.CuboidNeoMine;
 import me.neomines.mine.components.NeoMineBlock;
 import me.neomines.utils.ItemStackBuilder;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.data.BlockData;
@@ -94,13 +93,10 @@ public class CompositionMenu extends PaginatedMenu {
         }
 
         Material mat = event.getCurrentItem().getType();
-        switch (mat) {
-            case WATER_BUCKET:
-                mat = Material.WATER;
-                break;
-            case LAVA_BUCKET:
-                mat = Material.LAVA;
-                break;
+        if (mat == Material.WATER_BUCKET) {
+            mat = Material.WATER;
+        } else if (mat == Material.LAVA_BUCKET) {
+            mat = Material.LAVA;
         }
 
         if (!mat.isBlock()) {
@@ -146,7 +142,7 @@ public class CompositionMenu extends PaginatedMenu {
                         lore.add(s.replaceAll("%blockdata%", subStr).replaceAll("%chance%", String.valueOf(neoBlock.getChance())));
                     }
 
-                    inventory.addItem(ItemStackBuilder.buildItem(material, material == Material.WRITTEN_BOOK ? ChatColor.WHITE + blockData.getMaterial().name() : "", lore));
+                    inventory.addItem(ItemStackBuilder.buildItem(material, material == Material.WRITTEN_BOOK ? "§f" + blockData.getMaterial().name() : "", lore));
                 }
             }
         }

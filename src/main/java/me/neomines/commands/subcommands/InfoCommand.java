@@ -1,15 +1,16 @@
 package me.neomines.commands.subcommands;
 
+import com.sk89q.worldedit.regions.Region;
 import me.neomines.NeoMines;
 import me.neomines.commands.CommandInterface;
 import me.neomines.mine.CuboidNeoMine;
 import me.neomines.mine.components.NeoMineResetMode;
 import me.neomines.schedulers.MineManager;
 import me.neomines.utils.Utils;
-import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.chat.ClickEvent;
-import net.md_5.bungee.api.chat.HoverEvent;
-import net.md_5.bungee.api.chat.TextComponent;
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.event.ClickEvent;
+import net.kyori.adventure.text.event.HoverEvent;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
@@ -18,6 +19,7 @@ import java.util.Arrays;
 public class InfoCommand implements CommandInterface {
 
     @Override
+    @SuppressWarnings({"deprecation", "null"})
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
 
         if (!sender.hasPermission("neomines.info")) {
@@ -38,9 +40,10 @@ public class InfoCommand implements CommandInterface {
                     "--------------------------------");
 
             // Displays the region
-            TextComponent component = new TextComponent("Hududni yuklab bo'lmadi");
-            if (cuboidNeoMine.getRegion() != null) {
-                String[] strings = Utils.regionToArray(cuboidNeoMine.getRegion());
+            Component component = Component.text("Hududni yuklab bo'lmadi");
+            Region region = cuboidNeoMine.getRegion();
+            if (region != null) {
+                String[] strings = Utils.regionToArray(region);
                 String regionString = "§bHudud:" + "\n" +
                         "  §6Dunyo: §c" + strings[0] + "\n" +
                         "    §6p1:" + "\n" +
@@ -52,15 +55,15 @@ public class InfoCommand implements CommandInterface {
                         "      §7y2: §c" + strings[5] + "\n" +
                         "      §7z2: §c" + strings[6];
 
-                component = new TextComponent(regionString);
-                component.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§aTeleport bo'lish uchun bosing!")));
-                component.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/neomines tp " + cuboidNeoMine.getName()));
+                component = LegacyComponentSerializer.legacySection().deserialize(regionString)
+                        .hoverEvent(HoverEvent.showText(Component.text("§aTeleport bo'lish uchun bosing!")))
+                        .clickEvent(ClickEvent.runCommand("/neomines tp " + cuboidNeoMine.getName()));
             }
-            sender.spigot().sendMessage(component);
+            sender.sendMessage(component);
 
             sender.sendMessage("§7--------------------------------");
             sender.sendMessage("§bBloklar tarkibi:");
-            cuboidNeoMine.getBlocks().forEach(block -> sender.sendMessage("  " + ChatColor.GOLD + block.getBlockData().getAsString(true) + ChatColor.AQUA + " , " + ChatColor.RED + block.getChance() + "%"));
+            cuboidNeoMine.getBlocks().forEach(block -> sender.sendMessage("  §6" + block.getBlockData().getAsString(true) + "§b , §c" + block.getChance() + "%"));
 
             sender.sendMessage("§7--------------------------------");
             sender.sendMessage(
@@ -84,22 +87,22 @@ public class InfoCommand implements CommandInterface {
             sender.sendMessage("§6Xabarlar:");
 
             String prefixChop = NeoMines.PREFIX != null ? NeoMines.PREFIX.trim() : "";
-            String warnMessage = org.bukkit.ChatColor.translateAlternateColorCodes('&', cuboidNeoMine.getWarnMessage()
+            String warnMessage = Utils.color(cuboidNeoMine.getWarnMessage()
                     .replaceAll("%nm%", prefixChop)
                     .replaceAll("%cm%", prefixChop)
                     .replaceAll("%mine%", cuboidNeoMine.getName()));
             Arrays.stream(warnMessage.split("/n")).forEach(sender::sendMessage);
 
-            String resetMessage = org.bukkit.ChatColor.translateAlternateColorCodes('&', cuboidNeoMine.getResetMessage()
+            String resetMessage = Utils.color(cuboidNeoMine.getResetMessage()
                     .replaceAll("%nm%", prefixChop)
                     .replaceAll("%cm%", prefixChop)
                     .replaceAll("%mine%", cuboidNeoMine.getName()));
             Arrays.stream(resetMessage.split("/n")).forEach(sender::sendMessage);
 
-            String hotbarMessageTime = org.bukkit.ChatColor.translateAlternateColorCodes('&', cuboidNeoMine.getWarnHotbarMessage(NeoMineResetMode.TIME).replaceAll("%mine%", cuboidNeoMine.getName()));
+            String hotbarMessageTime = Utils.color(cuboidNeoMine.getWarnHotbarMessage(NeoMineResetMode.TIME).replaceAll("%mine%", cuboidNeoMine.getName()));
             sender.sendMessage(hotbarMessageTime);
 
-            String hotbarMessagePer = org.bukkit.ChatColor.translateAlternateColorCodes('&', cuboidNeoMine.getWarnHotbarMessage(NeoMineResetMode.PERCENTAGE).replaceAll("%mine%", cuboidNeoMine.getName()));
+            String hotbarMessagePer = Utils.color(cuboidNeoMine.getWarnHotbarMessage(NeoMineResetMode.PERCENTAGE).replaceAll("%mine%", cuboidNeoMine.getName()));
             sender.sendMessage(hotbarMessagePer);
 
             sender.sendMessage("");

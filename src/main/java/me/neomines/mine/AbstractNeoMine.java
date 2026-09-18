@@ -61,7 +61,8 @@ public abstract class AbstractNeoMine implements Cloneable {
         this.name = name;
         if (region != null) {
             this.region = region.clone();
-            this.world = region.getWorld() != null ? region.getWorld().getName() : null;
+            com.sk89q.worldedit.world.World regionWorld = region.getWorld();
+            this.world = regionWorld != null ? regionWorld.getName() : null;
         }
     }
 
@@ -142,7 +143,10 @@ public abstract class AbstractNeoMine implements Cloneable {
                 if (!replaceMode) {
                     editSession.setBlocks(region, randomPattern);
                 } else {
-                    editSession.replaceBlocks(region, Collections.singleton(BlockTypes.AIR.getDefaultState().toBaseBlock()), randomPattern);
+                    com.sk89q.worldedit.world.block.BlockType airType = BlockTypes.AIR;
+                    if (airType != null) {
+                        editSession.replaceBlocks(region, Collections.singleton(airType.getDefaultState().toBaseBlock()), randomPattern);
+                    }
                 }
             }
 
@@ -366,17 +370,25 @@ public abstract class AbstractNeoMine implements Cloneable {
     }
 
     public Collection<? extends Player> getPlayersInRegion() {
+        if (region == null) return Collections.emptyList();
+        com.sk89q.worldedit.world.World regionWorld = region.getWorld();
+        if (regionWorld == null) return Collections.emptyList();
+        String regionWorldName = regionWorld.getName();
+
         return Bukkit.getOnlinePlayers().stream().filter(player ->
-                region != null && region.getWorld() != null &&
-                Objects.equals(region.getWorld().getName(), player.getWorld().getName()) &&
+                Objects.equals(regionWorldName, player.getWorld().getName()) &&
                 region.contains(BlockVector3.at(player.getLocation().getX(), player.getLocation().getY(), player.getLocation().getZ()))
         ).collect(Collectors.toList());
     }
 
     public Collection<? extends Player> getPlayersInDistance() {
+        if (region == null) return Collections.emptyList();
+        com.sk89q.worldedit.world.World regionWorld = region.getWorld();
+        if (regionWorld == null) return Collections.emptyList();
+        String regionWorldName = regionWorld.getName();
+
         return Bukkit.getOnlinePlayers().stream().filter(player ->
-                region != null && region.getWorld() != null &&
-                Objects.equals(region.getWorld().getName(), player.getWorld().getName()) &&
+                Objects.equals(regionWorldName, player.getWorld().getName()) &&
                 player.getBoundingBox().overlaps(
                         new BoundingBox(
                                 region.getMinimumPoint().x(),
@@ -438,7 +450,12 @@ public abstract class AbstractNeoMine implements Cloneable {
 
     public void setRegion(Region region) {
         this.region = region;
-        this.world = region != null && region.getWorld() != null ? region.getWorld().getName() : null;
+        if (region != null) {
+            com.sk89q.worldedit.world.World regionWorld = region.getWorld();
+            this.world = regionWorld != null ? regionWorld.getName() : null;
+        } else {
+            this.world = null;
+        }
     }
 
     public List<NeoMineBlock> getBlocks() {

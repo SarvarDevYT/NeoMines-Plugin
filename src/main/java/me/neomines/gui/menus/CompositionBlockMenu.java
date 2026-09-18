@@ -6,7 +6,6 @@ import me.neomines.gui.PlayerMenuUtility;
 import me.neomines.mine.CuboidNeoMine;
 import me.neomines.mine.components.NeoMineBlock;
 import me.neomines.utils.ItemStackBuilder;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.data.BlockData;
@@ -161,7 +160,7 @@ public class CompositionBlockMenu extends Menu {
             material = Material.WRITTEN_BOOK;
         }
 
-        inventory.setItem(13, ItemStackBuilder.buildItem(material, !material.isSolid() ? ChatColor.WHITE + block.getBlockData().getMaterial().toString() : "", blockLore));
+        inventory.setItem(13, ItemStackBuilder.buildItem(material, !material.isSolid() ? "§f" + block.getBlockData().getMaterial().toString() : "", blockLore));
 
         String increaseBy = plugin.getLangString("GUI.Universal.Increase-By");
         String decreaseBy = plugin.getLangString("GUI.Universal.Decrease-By");
