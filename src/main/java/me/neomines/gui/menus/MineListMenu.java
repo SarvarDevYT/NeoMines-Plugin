@@ -45,7 +45,6 @@ public class MineListMenu extends PaginatedMenu {
     }
 
     @Override
-    @SuppressWarnings("null")
     public void handleMenu(InventoryClickEvent event) {
         event.setCancelled(true);
         ItemStack itemStack = event.getCurrentItem();
@@ -105,7 +104,6 @@ public class MineListMenu extends PaginatedMenu {
     }
 
     @Override
-    @SuppressWarnings("null")
     public void setMenuItems() {
         addMenuBorder();
 

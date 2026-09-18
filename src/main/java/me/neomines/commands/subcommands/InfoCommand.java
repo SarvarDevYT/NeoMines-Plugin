@@ -19,7 +19,6 @@ import java.util.Arrays;
 public class InfoCommand implements CommandInterface {
 
     @Override
-    @SuppressWarnings({"deprecation", "null"})
     public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
 
         if (!sender.hasPermission("neomines.info")) {
